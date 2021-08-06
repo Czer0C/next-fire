@@ -1,7 +1,22 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import Loader from "../components/Loader";
 
 export default function Home() {
-  return <div>a</div>;
+  return (
+    <div>
+      <Loader show />
+      <Link
+        prefetch={false}
+        href={{
+          pathname: "/[username]",
+          query: { username: "kanata1013" },
+        }}
+      >
+        <a>Kanata Page</a>
+      </Link>
+    </div>
+  );
 }
